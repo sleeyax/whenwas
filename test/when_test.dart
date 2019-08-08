@@ -1,4 +1,4 @@
-import 'package:when/when.dart';
+import 'package:whenwas/when.dart';
 import 'package:test/test.dart';
 
 void main() {

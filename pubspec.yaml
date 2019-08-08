@@ -1,7 +1,7 @@
-name: when
+name: whenwas
 description: Calculates how many years, months, days, ... ago a DateTime is.
 version: 1.0.0
-homepage: https://github.com/sleeyax/when
+homepage: https://github.com/sleeyax/whenwas
 author: Sleeyax <yourd3veloper@gmail.com>
 
 environment:
