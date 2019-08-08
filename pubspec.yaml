@@ -1,5 +1,5 @@
 name: when
-description: A starting point for Dart libraries or applications.
+description: Calculates how many years, months, days, ... ago a DateTime is.
 version: 1.0.0
 homepage: https://github.com/sleeyax/when
 author: Sleeyax <yourd3veloper@gmail.com>
