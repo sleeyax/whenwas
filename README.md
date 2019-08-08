@@ -1,4 +1,4 @@
-# When
+# Whenwas
 Library to calculate how many years, months, days, ... ago a given DateTime is.
 
 ## Usage
