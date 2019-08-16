@@ -1,3 +1,6 @@
+import 'package:whenwas/src/time.dart';
+import 'package:whenwas/src/time_units.dart';
+
 class When {
   final DateTime _dateTime;
 
@@ -14,14 +17,14 @@ class When {
 
   When(this._dateTime) {
     Duration duration = DateTime.now().difference(_dateTime);
-    _calcFullDuration(duration);
+    _calc(duration);
   }
 
-  _calcFullDuration(Duration duration) {
+  _calc(Duration duration) {
     if (duration.isNegative || duration.inMilliseconds == 0) throw Exception('Expected a DateTime object pointing to the past!');
 
-    _seconds = duration.inSeconds;
     _milliSeconds = duration.inMilliseconds;
+    _seconds = duration.inSeconds;
     _minutes = duration.inMinutes;
     _hours = duration.inHours;
     _days = duration.inDays;
@@ -36,23 +39,28 @@ class When {
     }    
   }
 
-  @override
-  String toString() {
+  Time toTime() {
     Map<String, int> items = {
-      'year': _years,
-      'month': _months,
-      'day': _days,
-      'hour': _hours,
-      'minute': _minutes,
-      'second': _seconds,
-      'millisecond': _milliSeconds 
+      TimeUnit.YEAR: _years,
+      TimeUnit.MONTH: _months,
+      TimeUnit.DAY: _days,
+      TimeUnit.HOUR: _hours,
+      TimeUnit.MINUTE: _minutes,
+      TimeUnit.SECOND: _seconds,
+      TimeUnit.MILLISECOND: _milliSeconds 
     };
 
    for (String key in items.keys) {
      int value = items[key];
-     if (value != 0) return '$value $key${value == 1 ? "" : "s"} ago';
+     if (value != 0) return Time(key, value);
    }
 
-   throw Exception('Something went horribly wrong while converting to string');
+   throw Exception('Something went horribly wrong while converting to a Time object');
+  }
+
+  @override
+  String toString() {
+    Time time = toTime();
+    return '${time.amount} ${time.unit}${time.amount == 1 ? "" : "s"} ago';
   }
 }

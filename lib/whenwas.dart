@@ -2,3 +2,4 @@
 library whenwas;
 
 export 'src/when_base.dart';
+export 'src/time_units.dart';
