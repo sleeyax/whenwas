@@ -13,4 +13,12 @@ main() {
 
   // 29 days ago
   print(When(dateInThePast));
+
+  // custom format:
+  dateInThePast = dateInThePast.subtract(Duration(days: 365 * 4));
+  var time = When(dateInThePast).toTime();
+  if (time.unit == TimeUnit.YEAR) {
+    // 4 super long years ago
+    print('${time.amount} super long ${time.unit}s ago');
+  }
 }
