@@ -11,5 +11,12 @@ main() {
   
   // x years ago
   print(When(date));
+
+  // in case you want a custom format:
+  var time = When(date).toTime();
+  if (time.unit == TimeUnit.YEAR) {
+    // x years ago in Spanish
+    print('Hace ${time.amount} años')
+  }
 }
 ```
