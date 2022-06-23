@@ -1,3 +1,9 @@
+**NO LONGER MAINTAINED**
+
+This project was a great fit for my use case at the time, but now better maintained solutions exist to solve the same problem.
+
+---
+
 # Whenwas
 Library to calculate how many years, months, days, ... ago a given DateTime is.
 
